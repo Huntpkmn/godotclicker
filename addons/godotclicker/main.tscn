@@ -1,0 +1,100 @@
+[gd_scene load_steps=5 format=3 uid="uid://bxtxoaqekcfy"]
+
+[ext_resource type="Texture2D" uid="uid://blrwv67rd37b0" path="res://addons/godotclicker/icon.svg" id="1_1daqq"]
+[ext_resource type="Script" path="res://addons/godotclicker/main.gd" id="1_qopvw"]
+[ext_resource type="Script" path="res://addons/godotclicker/Stage.gd" id="2_5x2x0"]
+[ext_resource type="Script" path="res://addons/godotclicker/clicker.gd" id="2_flcvk"]
+
+[node name="MarginContainer" type="MarginContainer"]
+anchors_preset = -1
+anchor_right = 0.997
+anchor_bottom = 1.0
+offset_right = -0.544067
+offset_bottom = -2.0
+grow_horizontal = 2
+grow_vertical = 2
+size_flags_horizontal = 3
+size_flags_vertical = 3
+script = ExtResource("1_qopvw")
+metadata/_edit_use_anchors_ = true
+
+[node name="Timer" type="Timer" parent="."]
+wait_time = 0.5
+autostart = true
+
+[node name="HBoxContainer" type="HBoxContainer" parent="."]
+layout_mode = 2
+
+[node name="ScrollContainer" type="ScrollContainer" parent="HBoxContainer"]
+custom_minimum_size = Vector2(200, 0)
+layout_mode = 2
+size_flags_horizontal = 3
+
+[node name="VBoxContainer" type="VBoxContainer" parent="HBoxContainer/ScrollContainer"]
+layout_mode = 2
+
+[node name="PanelContainer" type="PanelContainer" parent="HBoxContainer"]
+layout_mode = 2
+size_flags_horizontal = 3
+
+[node name="Panel" type="Panel" parent="HBoxContainer/PanelContainer"]
+layout_mode = 2
+script = ExtResource("2_5x2x0")
+
+[node name="Label" type="Label" parent="HBoxContainer/PanelContainer/Panel"]
+layout_mode = 1
+anchors_preset = -1
+anchor_right = 1.0
+anchor_bottom = 0.106481
+grow_horizontal = 2
+theme_override_font_sizes/font_size = 50
+text = "Bits:
+11677"
+horizontal_alignment = 1
+metadata/_edit_use_anchors_ = true
+
+[node name="CenterContainer" type="CenterContainer" parent="HBoxContainer/PanelContainer/Panel"]
+layout_mode = 1
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+metadata/_edit_use_anchors_ = true
+
+[node name="clicker" type="TextureButton" parent="HBoxContainer/PanelContainer/Panel/CenterContainer"]
+layout_mode = 2
+texture_normal = ExtResource("1_1daqq")
+script = ExtResource("2_flcvk")
+metadata/_edit_use_anchors_ = true
+
+[node name="Sprite2D" type="Sprite2D" parent="HBoxContainer/PanelContainer/Panel/CenterContainer/clicker"]
+position = Vector2(64, 64)
+texture = ExtResource("1_1daqq")
+
+[node name="ScrollContainer2" type="ScrollContainer" parent="HBoxContainer"]
+custom_minimum_size = Vector2(200, 0)
+layout_mode = 2
+size_flags_horizontal = 3
+
+[node name="VBoxContainer" type="VBoxContainer" parent="HBoxContainer/ScrollContainer2"]
+layout_mode = 2
+
+[node name="ClickersBut" type="Button" parent="HBoxContainer/ScrollContainer2/VBoxContainer"]
+layout_mode = 2
+text = "0|Buy Clickers: 50"
+
+[node name="NodesBut" type="Button" parent="HBoxContainer/ScrollContainer2/VBoxContainer"]
+layout_mode = 2
+text = "0|Buy Nodes: 200"
+
+[node name="GodotsBut" type="Button" parent="HBoxContainer/ScrollContainer2/VBoxContainer"]
+layout_mode = 2
+text = "4|Buy Godots: 700"
+
+[connection signal="timeout" from="Timer" to="." method="_on_timer_timeout"]
+[connection signal="clicked" from="HBoxContainer/PanelContainer/Panel/CenterContainer/clicker" to="." method="_on_clicker_clicked"]
+[connection signal="pressed" from="HBoxContainer/PanelContainer/Panel/CenterContainer/clicker" to="HBoxContainer/PanelContainer/Panel/CenterContainer/clicker" method="_on_pressed"]
+[connection signal="pressed" from="HBoxContainer/ScrollContainer2/VBoxContainer/ClickersBut" to="." method="_on_clickers_but_pressed"]
+[connection signal="pressed" from="HBoxContainer/ScrollContainer2/VBoxContainer/NodesBut" to="." method="_on_nodes_but_pressed"]
+[connection signal="pressed" from="HBoxContainer/ScrollContainer2/VBoxContainer/GodotsBut" to="." method="_on_godots_but_pressed"]

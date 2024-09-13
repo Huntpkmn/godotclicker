@@ -1,0 +1,10 @@
+[gd_resource type="Resource" script_class="_CookieData" load_steps=2 format=3 uid="uid://cw74h8268hxpc"]
+
+[ext_resource type="Script" path="res://addons/godotclicker/CookieDataReSource.gd" id="1_lgg8y"]
+
+[resource]
+script = ExtResource("1_lgg8y")
+bits = 8089452
+clicker = 56
+node = 46
+godots = 145
