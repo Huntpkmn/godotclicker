@@ -38,22 +38,24 @@ func update_godots():
 
 func _on_godots_but_pressed() -> void:
 	if data.bits > 500+100 * data.godots/2:
-		data.godots +=1
 		data.bits -=500+100 * data.godots/2
+		data.godots +=1
+
 		update_godots()
 
 
 func _on_nodes_but_pressed() -> void:
 	if data.bits > 200+50 * data.node/2:
-		data.node +=1
 		data.bits -=200+50 * data.node/2
+		data.node +=1
+		
 		update_nodes()
 
 
 func _on_clickers_but_pressed() -> void:
 	if data.bits > 50+25 * data.clicker/2:
-		data.clicker +=1
 		data.bits -=50+25* data.clicker/2
+		data.clicker +=1
 		update_clickers()
 
 

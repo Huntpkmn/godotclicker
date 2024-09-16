@@ -49,7 +49,7 @@ anchor_bottom = 0.106481
 grow_horizontal = 2
 theme_override_font_sizes/font_size = 50
 text = "Bits:
-11677"
+413"
 horizontal_alignment = 1
 metadata/_edit_use_anchors_ = true
 
@@ -82,7 +82,7 @@ layout_mode = 2
 
 [node name="ClickersBut" type="Button" parent="HBoxContainer/ScrollContainer2/VBoxContainer"]
 layout_mode = 2
-text = "0|Buy Clickers: 50"
+text = "4|Buy Clickers: 100"
 
 [node name="NodesBut" type="Button" parent="HBoxContainer/ScrollContainer2/VBoxContainer"]
 layout_mode = 2
@@ -90,7 +90,7 @@ text = "0|Buy Nodes: 200"
 
 [node name="GodotsBut" type="Button" parent="HBoxContainer/ScrollContainer2/VBoxContainer"]
 layout_mode = 2
-text = "4|Buy Godots: 700"
+text = "0|Buy Godots: 500"
 
 [connection signal="timeout" from="Timer" to="." method="_on_timer_timeout"]
 [connection signal="clicked" from="HBoxContainer/PanelContainer/Panel/CenterContainer/clicker" to="." method="_on_clicker_clicked"]

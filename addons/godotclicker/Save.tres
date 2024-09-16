@@ -4,7 +4,7 @@
 
 [resource]
 script = ExtResource("1_lgg8y")
-bits = 8089452
-clicker = 56
-node = 46
-godots = 145
+bits = 324256
+clicker = 3
+node = 6
+godots = 7
